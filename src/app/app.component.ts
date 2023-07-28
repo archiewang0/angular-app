@@ -5,6 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+// 資料的區域
 export class AppComponent {
-  title = 'frist_angular_app';
+  title = 'frist_angular_app!!!!!!!!!!!!!!!!!!!!!!!';
 }
