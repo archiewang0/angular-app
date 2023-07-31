@@ -1,3 +1,12 @@
-<input type="text" [(ngModel)]="title"> 
-<!-- two way binding 使用的語法 [{ngModel}] 該變數需要對應到 component存取的變數 -->
-<h2>{{ title }}</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <input type="text" [(ngModel)]="title" />
+            <!-- two way binding 使用的語法 [{ngModel}] 該變數需要對應到 component存取的變數 -->
+            <h2>{{ title }}</h2>
+            <app-server></app-server>
+            <warning-alert></warning-alert>
+            <success-alert></success-alert>
+        </div>
+    </div>
+</div>
