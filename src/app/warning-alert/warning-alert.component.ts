@@ -1,16 +1,20 @@
-import { Component } from "@angular/core";
+import { Component , Input, ViewEncapsulation } from "@angular/core";
 
 @Component({
     selector: 'warning-alert',
-    template: `
-        <p>錯誤alert</p>
-    `,
+    templateUrl: './warning-alert.component.html',
     styles: [`
         p {
             border: 1px solid red;
             padding: 5px;
             background-color: red;
         }
-    `]
+    `],
+    encapsulation: ViewEncapsulation.ShadowDom
 })
-export class WarningAlertComponent {}
+export class WarningAlertComponent {
+    @Input('otherNameElement') element: {name:string; type: string; content: string} | null
+    constructor(){
+        this.element = null
+    }
+}

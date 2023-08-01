@@ -5,8 +5,17 @@
             <!-- two way binding 使用的語法 [{ngModel}] 該變數需要對應到 component存取的變數 -->
             <h2>{{ title }}</h2>
             <app-server></app-server>
-            <warning-alert></warning-alert>
-            <success-alert></success-alert>
+            <warning-alert *ngFor="let serverElement of serverElements"
+                [otherNameElement]="serverElement"></warning-alert>
+            <success-alert (serverCreated)="onServerCreated($event)"></success-alert>
+            
+            <hr>
+
+            <div>
+                <div *ngFor="let serverElement of serverElements">
+                    {{serverElement.name}} - {{serverElement.type}} - {{serverElement.content}}
+                </div>
+            </div>
         </div>
     </div>
 </div>
