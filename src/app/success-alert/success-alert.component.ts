@@ -1,4 +1,4 @@
-import { Component , EventEmitter , Output } from "@angular/core";
+import { Component , EventEmitter , Output , ViewChild ,ElementRef} from "@angular/core";
 
 @Component({
     selector: 'success-alert',
@@ -7,9 +7,12 @@ import { Component , EventEmitter , Output } from "@angular/core";
 })
 export class SuccessAlertComponent{
     @Output() serverCreated = new EventEmitter<{name:string ; type:string ; content: string}>()
+    @ViewChild('successTemplates') successTemplates? :ElementRef<HTMLInputElement>;
     successData: string=""
 
-    ondjalfdjsaljf(){
+    ondjalfdjsaljf(inputElement: HTMLInputElement){
+        console.log('1: ', inputElement)
+        console.log('2: ', this.successTemplates?.nativeElement )
         this.serverCreated.emit({name: this.successData , type: this.successData , content:this.successData})
     }
 }
