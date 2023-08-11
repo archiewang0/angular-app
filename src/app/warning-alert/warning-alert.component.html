@@ -1,7 +1,14 @@
 <p>
-    <span>錯誤alert</span> 
+    <span appBasicHighlight>錯誤alert</span> 
+    <span appBetterHighlight>錯誤alert</span> 
     <br>
-    <span>會被渲染出來</span> 
+    <success-alert>
+        <span #testTemplates >會被渲染出來 - {{someValue}}</span> 
+    </success-alert>
     <br>
+    
     <span *ngIf="element">{{element.name}} - {{element.type}} - {{element.content}} </span>
 </p>
+
+<button (click)="addComponentNumber()">按我增加數值 目前數值為 {{componentArray.length}}</button>
+<!-- <div *ngFor="" *ngIf="componentNumber % 2 === 0">顯示或是不顯示藉由 數字是否為奇數或是偶數</div> -->

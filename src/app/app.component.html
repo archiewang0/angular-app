@@ -5,9 +5,11 @@
             <!-- two way binding 使用的語法 [{ngModel}] 該變數需要對應到 component存取的變數 -->
             <h2>{{ title }}</h2>
             <app-server></app-server>
-            <warning-alert *ngFor="let serverElement of serverElements"
-                [otherNameElement]="serverElement"></warning-alert>
-            <success-alert (serverCreated)="onServerCreated($event)"></success-alert>
+            <warning-alert *ngFor="let serverElement of serverElements; let i = index" 
+                [otherNameElement]="serverElement" [someValue]="i"></warning-alert>
+            <success-alert (serverCreated)="onServerCreated($event)">
+                <p #testTemplates>success-alert component 夾帶的內容</p>
+            </success-alert>
             
             <hr>
 
@@ -17,5 +19,24 @@
                 </div>
             </div>
         </div>
+
+        <div>測試</div>
+
+        <div *appUnless="false"> 我會消失</div>
+        <div *appUnless="true"> 我會顯示 </div>
+
+        <h2>使用ngSwitch</h2>
+        <div [ngSwitch]="switchValue">
+            <p *ngSwitchCase="1">value is 1</p>
+            <p *ngSwitchCase="5">value is 5</p>
+            <p *ngSwitchCase="10">value is 10</p>
+            <p *ngSwitchDefault>value is 100</p>
+        </div>
+
+        <hr>
+        <h2 appDropdown>假裝是dropDown</h2>
+
+        <input [(ngModel)]="prop" placeholder="這裡輸入">
+        <div>{{prop}}</div>
     </div>
 </div>

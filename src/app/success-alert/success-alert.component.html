@@ -2,4 +2,7 @@
 <input type="text" [(ngModel)]="successData">
 <hr>
 <input type="text" #successTemplates>
-<button (click)="ondjalfdjsaljf(successTemplates)">success alert 按鈕</button>
+<button (click)="doFunction(successTemplates)" appBasicHighlight>success alert 按鈕</button>
+<div appBetterHighlight="yellow" defaultColor="pink" >會被夾起來!start</div>
+<ng-content></ng-content>
+<div>會被夾起來!end</div>
